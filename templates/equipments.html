@@ -1,0 +1,45 @@
+{#{% extends 'catalogue.html' %}#}
+
+
+{% extends 'base.html' %}
+{% block title %}| Catalogue {% endblock title %}
+
+
+{% include 'components/nav.html' %}
+
+{% block content %}
+
+
+    <div class="for-display-1 container-workspace">
+
+
+        {% include 'components/filter.html' %}
+
+
+{#        <div class="display-col">#}
+
+
+            <div class="height-equipments">
+{#                <div class="container">#}
+                    <div class="new">
+                        <h2>
+                            ЭКИПИРОВКА
+                        </h2>
+                    </div>
+                    <div class="all-equipments">
+                        {% for equipment in equipments %}
+                            <div class="equipments">
+                                <img class="img-equipments" src="{{ equipment.image.url }}" alt="">
+                                <p>{{ equipment.description }}</p>
+                                <p>{{ equipment.price }}</p>
+                            </div>
+                        {% endfor %}
+                    </div>
+{#                </div>#}
+            </div>
+
+        </div>
+
+{#    </div>#}
+{% endblock content %}
+

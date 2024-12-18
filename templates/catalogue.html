@@ -1,0 +1,66 @@
+
+
+
+{% extends 'base.html' %}
+{% block title %}| Catalogue {% endblock title %}
+
+
+{% include 'components/nav.html' %}
+
+{% block content %}
+    <div class="back-catalogue">
+        <div>
+            {#            {% for category %}#}
+            {#            {% for %}#}
+        </div>
+        <div class="padding-catalogue">
+            <h1>
+                ГОРНЫЕ ВЕЛОСИПЕДЫ
+            </h1>
+        </div>
+    </div>
+
+    <div class="for-display-1 container-workspace">
+
+
+        {% include 'components/filter.html' %}
+    
+
+        <div class="display-col">
+        
+
+            <div class="display-card">
+                {% if bicycles %}
+                    {% for bicycle in bicycles %}
+                        <div class="card">
+                            <div class="display-flag">
+                                <img style="width: 90px; margin: 0" src="{{ bicycle.country.flag.url }}" alt="">
+                                {% if bicycle.id == 1 %}
+                                    <p class="green-text">{{ have }}</p>
+                                {% else %}
+                                    <p class="red-text">{{ have_2 }}</p>
+                                {% endif %}
+                            </div>
+                            <img class="padding-bicycle" style="width: 200px" src="{{ bicycle.image.url }}" alt="">
+                            <p class="black">{{ bicycle.mark }}</p>
+                            <p class="black">{{ bicycle.price }}₽</p>
+                            <div class="card-button">
+                                <button>
+                                    <a href="{% url 'detail_bicycles' id=bicycle.id %}">
+                                        Посмотреть
+                                    </a>
+                                </button>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>Нет велосипедов</p>
+                {% endif %}
+            </div>
+        </div>
+
+    </div>
+    {% include 'components/bicycles_pagination.html' %}
+    
+
+{% endblock content %}

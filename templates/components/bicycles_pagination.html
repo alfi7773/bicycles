@@ -1,0 +1,33 @@
+<div class="back-orange">
+
+    {% if bicycles.has_previous or bicycles.has_next %}
+        <div class="">
+        {% if bicycles.has_previous %}
+            <a class="page-link gray" href="?page={{ bicycles.previous_page_number }}">
+                <<
+            </a>
+            <a class="page-link black" href="?page={{ bicycles.previous_page_number }}">
+                <
+            </a>
+        {% endif %}
+
+        {% for i in bicycles.paginator.page_range %}
+            {% if bicycles.number == i %}
+                <span class="padding-orange">{{ i }}</span>
+            {% else %}
+                <a class="padding-solid black" href="?page={{ i }}">{{ i }}</a>
+            {% endif %}
+        {% endfor %}
+
+        {% if bicycles.has_next %}
+            <a class="page-link black" href="?page={{ bicycles.next_page_number }}">
+                >
+            </a>
+            <a class="page-link gray" href="?page={{ bicycles.next_page_number }}">
+                >>
+            </a>
+        {% endif %}
+    {% endif %}
+
+    </div>
+</div>

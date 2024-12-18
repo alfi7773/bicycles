@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="style-form">
+
+        <div class="container center display-col">
+            <h2>
+                Create Bicycles
+            </h2>
+
+            <form class="form-create" action="{% url 'create_bicycles' %}" method="post" enctype="multipart/form-data" novalidate>
+                {% csrf_token %}
+            {{ form.as_div }}
+                <div>
+                    <button type="submit">Create</button>
+                </div>
+
+{#            <form class="form-create" action="{% url 'create_bicycles' %}" method="post" enctype="multipart/form-data" novalidate>#}
+{#                {% csrf_token %}#}
+{#                <div class="width-form ">#}
+{#                    {{ form.mark }}#}
+{#                    {% for error in form.mark.errors %}#}
+{#                        <p class="red-text">{{ error }}</p>#}
+{#                    {% endfor %}#}
+{#                </div>#}
+{##}
+{#                <div class="width-file width-form">#}
+{#                    {{ form.image }}#}
+{#                    {% for error in form.image.errors %}#}
+{#                        <p class="red-text">{{ error }}</p>#}
+{#                    {% endfor %}#}
+{#                </div>#}
+{##}
+{#                <div class="width-form">#}
+{#                    {{ form.description }}#}
+{#                    {% for error in form.description.errors %}#}
+{#                        <p class="red-text">{{ error }}</p>#}
+{#                    {% endfor %}#}
+{#                </div>#}
+{##}
+{#                <div class="width-form ">#}
+{#                    {{ form.material }}#}
+{#                    {% for error in form.material.errors %}#}
+{#                        <p class="red-text">{{ error }}</p>#}
+{#                    {% endfor %}#}
+{#                </div>#}
+{##}
+{#                <div class="width-form">#}
+{#                    {{ form.price }}#}
+{#                    {% for error in form.price.errors %}#}
+{#                        <p class="red-text">{{ error }}</p>#}
+{#                    {% endfor %}#}
+{#                </div>#}
+{##}
+                {#            <div class="width-file width-form">#}
+                {#                {% for country in countries %}#}
+                {#                    <input type="" name="country__flag" accept="image/*" required>#}
+                {#                {% endfor %}#}
+                {#            </div>#}
+{##}
+                {#            <div class="width-form">#}
+                {#                {% for element in countries %}#}
+                {#                    <select multiple name="" required>#}
+                {#                        <option value="{{ element.id }}">{{ element.label }}</option>#}
+                {#                    </select>#}
+                {#                    <input type="image" name="flag" accept="image/*" required>#}
+                {#                {% endfor %}#}
+                {#            </div>#}
+{#                <div class="container">#}
+{##}
+{#                    <div class="sizes-select">#}
+{#                        <div>#}
+{#                            <label>{{ form.size.label }}</label>#}
+{#                            {{ form.size }}#}
+{#                            {% for error in form.size.errors %}#}
+{#                                <p class="red-text">{{ error }}</p>#}
+{#                            {% endfor %}#}
+{#                        </div>#}
+{#                    </div>#}
+{##}
+{##}
+{#                    <div class="category-select">#}
+{#                        <div>#}
+{#                            <label>{{ form.category.label }}</label>#}
+{#                            {{ form.category }}#}
+{#                            {% for error in form.category.errors %}#}
+{#                                <p class="red-text">{{ error }}</p>#}
+{#                            {% endfor %}#}
+{#                        </div>#}
+{#                    </div>#}
+{##}
+{#                    <div class="category-select">#}
+{#                        <label>{{ form.category_product.label }}</label>#}
+{#                        {{ form.category_product }}#}
+{#                        {% for error in form.category_product.errors %}#}
+{#                           <p class="red-text">{{ error }}</p>#}
+{#                        {% endfor %}#}
+{#                    </div>#}
+{##}
+{#                </div>#}
+{##}
+{#                <div class="width-form ">#}
+{#                    {{ form.country }}#}
+{#                    {% for error in form.country.errors %}#}
+{#                       <p class="red-text">{{ error }}</p>#}
+{#                    {% endfor %}#}
+{#                </div>#}
+{##}
+{#                <div class="width-form ">#}
+{#                    {{ form.edition }}#}
+{#                    {% for error in form.edition.errors %}#}
+{#                        <p class="red-text">{{ error }}</p>#}
+{#                    {% endfor %}#}
+{#                </div>#}
+{##}
+{##}
+{#                <div class="width-form ">#}
+{#                    {{ form.have }}#}
+{#                    {% for error in form.have.errors %}#}
+{#                       <p class="red-text">{{ error }}</p>#}
+{#                    {% endfor %}#}
+{#                </div>#}
+{##}
+{#                <div>#}
+{#                    <button type="submit">Create</button>#}
+{#                </div>#}
+{##}
+{##}
+            </form>
+{##}
+        </div>
+    </div>
+
+{% endblock content %}

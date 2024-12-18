@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% include 'components/nav.html' %}
+
+{% block content %}
+    {#    <div class="back-catalogue">#}
+    {#        <div>#}
+    {#            {% for category %}#}
+    {#            {% for %}#}
+    {#        </div>#}
+    {#        <div class="padding-catalogue">#}
+    {#            <h1>#}
+    {#                ГОРНЫЕ ВЕЛОСИПЕДЫ#}
+    {#            </h1>#}
+    {#        </div>#}
+    {#    </div>#}
+
+    <div class="for-display-1 container-workspace">
+
+
+        {% include 'components/filter.html' %}
+        {#    </div>#}
+
+
+        {#        <div>#}
+        {#        <h1>Bicycles</h1>#}
+        {#            <p class="black">Количество велосипедов: {{ bicycles|length }}</p>#}
+        {#        </div>#}
+
+        <div class="display-col">
+
+            <div class="margin-button">
+                <button>
+                    <a href="{% url 'create_bicycles' %}">Create Bicycles <i class="fa-solid fa-bicycle"></i></a>
+                </button>
+            </div>
+
+            <div class="display-card">
+                {% if bicycles %}
+                    {% for bicycle in bicycles %}
+                        <div class="card">
+                            <div class="display-flag">
+                                <img style="width: 90px; margin: 0" src="{{ bicycle.country.flag.url }}" alt="">
+                                <p>{{ bicycle.have }}</p>
+                            </div>
+                            <img class="padding-bicycle" style="width: 200px;" src="{{ bicycle.image.url }}" alt="">
+                            <p class="black">{{ bicycle.mark }}</p>
+                            <p class="black">{{ bicycle.price }}₽</p>
+                            <div class="card-button">
+                                <button>
+                                    <a href="{% url 'detail_bicycles' id=bicycle.id %}">
+                                        Посмотреть
+                                    </a>
+                                </button>
+                                <button class="for-update">
+                                    <a href="{% url 'update_bicycles' bicycle.id %}">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </a>
+                                </button>
+                                <button class="for-delete">
+                                    <a href="{% url 'delete_bicycle' bicycle.id %}">
+                                       <i class="fa-solid fa-trash"></i>
+                                    </a>
+                                </button>
+                            </div>
+                        </div>
+                        {#                </div>#}
+                    {% endfor %}
+                {% else %}
+                    <p>Нет велосипедов</p>
+                {% endif %}
+            </div>
+        </div>
+
+    </div>
+
+
+    {% include 'components/bicycles_pagination.html' %}
+
+
+
+{% endblock content %}

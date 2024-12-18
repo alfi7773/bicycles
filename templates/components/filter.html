@@ -1,0 +1,74 @@
+<div class="display-filter">
+    <div class="display-col">
+        <h2>
+            Категории товара
+        </h2>
+        {% for cat in category %}
+            <label for="">
+                <input type="checkbox">
+                {{ cat }}
+            </label>
+        {% endfor %}
+    </div>
+
+    <div class="display-col">
+        <div class="margin-0">
+            <h2>
+                Цена
+            </h2>
+            <div class="price"></div>
+            {#            <img style="width: 100px" src="../static/static_dirs/image/price.png" alt="">#}
+            {#            <div class="margin-0">#}
+            <div>
+                0 ₽
+            </div>
+            <div>
+                1 137 900 ₽
+            </div>
+        </div>
+    </div>
+
+    <div class="display-col">
+        {% for from in name_from %}
+            <label for="">
+                <input type="checkbox">
+                {{ from }}
+            </label>
+        {% endfor %}
+    </div>
+
+    <div class="display-col">
+        <div class="margin-0">
+            <h2>
+                Материал рамы
+            </h2>
+        </div>
+        {% for mat in material %}
+            <label for="">
+                <input type="checkbox">
+                {{ mat }}
+            </label>
+        {% endfor %}
+    </div>
+
+    <div class="display-colors">
+
+        <div class="colors">
+            <h4 class="black">Цвет:</h4>
+            <div class="for-display-filter">
+                <div class="yellow"></div>
+                <div class="green"></div>
+                <div class="orange"></div>
+                <div class="pink"></div>
+                <div class="brown"></div>
+                <div class="red"></div>
+                <div class="violet"></div>
+                <div class="blue"></div>
+                <div class="gray-div"></div>
+                <div class="black-div"></div>
+                
+            </div>
+        </div>
+    </div>
+
+</div>

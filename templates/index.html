@@ -1,0 +1,498 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="background">
+        <div class="back-in-media">
+
+            <div class="container">
+                <div class="big-text">
+                    <h1>
+                        ЭЛЕКТРО
+                        <br>ВЕЛОСИПЕДЫ
+                    </h1>
+                    <p>
+                        Cento10Hybrid — этогоночный велосипед спомогающим
+                        <br>педалированию электроприводом, который устанавливает новый,
+                        <br>очень высокий стандарт дляданной категории
+                    </p>
+                    <div class="for-button" style="margin: 0">
+                        <button>
+                            <a href="">
+                                Подробнее
+                            </a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="with-hover">
+        <div class="first">
+            <h4>Экстремальное
+                <br>вождение на горном
+                <br>велосипеде</h4>
+        </div>
+        <div class="second">
+            <h4>
+                Велосипеды
+                <br>для профессионалов
+            </h4>
+        </div>
+        <div class="third">
+            <h4>
+                Долгая поездка
+                <br>на шоссейном велосипеде
+            </h4>
+        </div>
+    </div>
+
+    <div>
+        <div class="logos">
+            {% for photo in froms %}
+                <img src="{{ photo.logo.url }}" alt="">
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="bicycles">
+        <div class="container">
+            <div class="new">
+                <h2>
+                    НОВИНКИ
+                </h2>
+            </div>
+            <div class="elements">
+                <div class="cards-bicycle">
+                    {#                    <div class="card-button">#}
+
+                    {% for bicycle in bicycles|slice:"1:4" %}
+                        <div class="card">
+                            <div>
+                                <div class="display-flag">
+                                    <img style="width: 90px; margin: 0" src="{{ bicycle.country.flag.url }}" alt="">
+                                    <p>{{ bicycle.have }}</p>
+                                </div>
+                                <img class="padding-bicycle" style="width: 200px" src="{{ bicycle.image.url }}" alt="">
+                            </div>
+                            <p>{{ bicycle.mark }}</p>
+                            <p>{{ bicycle.price }}₽</p>
+                            <div class="card-button">
+                                <button>
+                                    <a href="{% url 'detail_bicycles' id=bicycle.id %}">Посмотреть</a>
+                                </button>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    {#                    </div>#}
+                </div>
+                <div class="href">
+                    <a href="{% url 'catalogue' %}">ПОКАЗАТЬ ВСЕ</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div>
+        <div class="container">
+            <div class="new">
+                <h2>
+                    КАТАЛОГ
+                </h2>
+            </div>
+        </div>
+        <div class="padding">
+{#            <button>#}
+                <a href="{% url 'catalogue' %}">
+                    <div class="first-button">
+                </a>
+{#            </button>#}
+            {#                <h2>#}
+            {#                    ВЕЛОСИПЕДЫ#}
+            {#                </h2>#}
+        </div>
+        <div class="buttons">
+            <div class="trade"></div>
+            <div class="display">
+                <div class="details"></div>
+                <div class="accessories"></div>
+            </div>
+            <div class="display">
+                <div class="equip"></div>
+                <div class="velo"></div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="end">
+            <h2>
+                НИЧЕГО НЕ СМОЖЕТ
+                <br>ОСТАНОВИТЬ ВАС
+            </h2>
+            <p>
+                Наша компания специализируется напродаже товаров
+                <br>для велосипедного спорта— велосипедов, запасных частей,
+                <br>аксессуаров и различного спортивного инвентаря
+                <br>для активного спорта и отдыха.
+            </p>
+        </div>
+    </div>
+    </div>
+
+    <div>
+        <div class="video">
+            <div class="photo-video">
+                <div class="vector-video"></div>
+            </div>
+        </div>
+        <div class="long-div">
+            <div class="white">
+                <div class="text-vector">
+                    <div class="dimond-vector"></div>
+                    <h5>
+                        Европейские бренды
+                    </h5>
+                </div>
+                <p>
+                    Представляем десятки
+                    <br>европейских брендов
+                </p>
+            </div>
+
+            <div class="white">
+                <div class="text-vector">
+                    <div class="dimond-vector"></div>
+                    <h5>
+                        Европейские бренды
+                    </h5>
+                </div>
+                <p>
+                    Представляем десятки
+                    <br>европейских брендов
+                </p>
+            </div>
+
+
+            <div class="white">
+                <div class="text-vector">
+                    <div class="dimond-vector"></div>
+                    <h5>
+                        Европейские бренды
+                    </h5>
+                </div>
+                <p>
+                    Представляем десятки
+                    <br>европейских брендов
+                </p>
+            </div>
+
+            <div class="white">
+                <div class="text-vector">
+                    <div class="dimond-vector"></div>
+                    <h5>
+                        Европейские бренды
+                    </h5>
+                </div>
+                <p>
+                    Представляем десятки
+                    <br>европейских брендов
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="back-bicycles">
+        <div class="models">
+            <h1>
+                Лучшие модели
+                <br>для зимней
+                <br>езды
+            </h1>
+        </div>
+
+        {#        <div class="container">#}
+        <div class="elements-two">
+            <div class="all-cards-two for-display display-in-media">
+                {% for bicycle in bicycles|slice:"0:3" %}
+                    <div class="card-two">
+                        <img src="{{ bicycle.image.url }}" alt="">
+                        <div class="display">
+                            <p class="black">{{ bicycle.mark }}</p>
+                            <p class="black">{{ bicycle.price }}₽</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="new">
+            <h2>
+                ГОРНЫЕ
+                <br>ВЕЛОСИПЕДЫ
+            </h2>
+        </div>
+
+        <div class="all">
+
+            <div class="type-one">
+                <div class="type">
+                    <div class="types">
+                        <div class="text-vector-two">
+                            <h5>
+                                Рама
+                            </h5>
+                            <div class="bike-icon"></div>
+                        </div>
+                        <p>
+                            It is a long established fact that
+                            <br>a reader will be distracted by
+                            <br>the readable content of
+                        </p>
+                    </div>
+
+                    <div class="types">
+                        <div class="text-vector-two">
+                            <h5>
+                                Рама
+                            </h5>
+                            <div class="bike-icon"></div>
+                        </div>
+                        <p>
+                            It is a long established fact that
+                            <br>a reader will be distracted by
+                            <br>the readable content of
+                        </p>
+                    </div>
+                </div>
+
+                <div class="type">
+                    <div class="types">
+                        <div class="text-vector-two">
+                            <h5>
+                                Рама
+                            </h5>
+                            <div class="bike-icon"></div>
+                        </div>
+                        <p>
+                            It is a long established fact that
+                            <br>a reader will be distracted by
+                            <br>the readable content of
+                        </p>
+                    </div>
+
+                    <div class="types">
+                        <div class="text-vector-two">
+                            <h5>
+                                Рама
+                            </h5>
+                            <div class="bike-icon"></div>
+                        </div>
+                        <p>
+                            It is a long established fact that
+                            <br>a reader will be distracted by
+                            <br>the readable content of
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mountain">
+                <div class="pic"></div>
+                <p>
+                    Горный велосипед несмотря на свое название часто и активно
+                    <br>используются в условиях города, так как обладает рядом
+                    <br>характеристик, позволяющих сделать велопрогулку
+                    <br>максимально приятной и комфортной
+                </p>
+                <div class="button-in-mountine">
+                    <button>
+                        Каталог
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div>
+        <div class="container">
+            <div class="new">
+                <h2>
+                    ПРЕИМУЩЕСТВА
+                </h2>
+            </div>
+        </div>
+        <div class="goods">
+            <div class="start"></div>
+            <div class="arguments">
+                <div class="type-two">
+
+                    <div class="free">
+                        <h5>
+                            БЕСПЛАТНАЯ ДОСТАВКА
+                        </h5>
+                        <p>
+                            Мы пользуемся всеми
+                            <br>популярными видами
+                            <br>доставки
+                        </p>
+                        <a href="">Подробнее</a>
+                    </div>
+
+                    <div class="free">
+                        <h5>
+                            БЕСПЛАТНАЯ ДОСТАВКА
+                        </h5>
+                        <p>
+                            Мы пользуемся всеми
+                            <br>популярными видами
+                            <br>доставки
+                        </p>
+                        <a href="">Подробнее</a>
+                    </div>
+                </div>
+
+                <div class="type-two">
+
+                    <div class="free">
+                        <h5>
+                            БЕСПЛАТНАЯ ДОСТАВКА
+                        </h5>
+                        <p>
+                            Мы пользуемся всеми
+                            <br>популярными видами
+                            <br>доставки
+                        </p>
+                        <a href="">Подробнее</a>
+                    </div>
+
+                    <div class="free">
+                        <h5>
+                            БЕСПЛАТНАЯ ДОСТАВКА
+                        </h5>
+                        <p>
+                            Мы пользуемся всеми
+                            <br>популярными видами
+                            <br>доставки
+                        </p>
+                        <a href="">Подробнее</a>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="black-pick"></div>
+
+        </div>
+    </div>
+
+    <div>
+        <div class="container">
+            <div class="new">
+                <h2>
+                    ЭКИПИРОВКА
+                </h2>
+            </div>
+            <div class="all-equipments">
+                {% for equipment in equipments %}
+                    <div class="equipments">
+                        <img class="img-equipments" src="{{ equipment.image.url }}" alt="">
+                        <p>{{ equipment.description }}</p>
+                        <p>{{ equipment.price }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="news">
+        <div class="container">
+            <div class="new">
+                <h2>
+                    ПОСЛЕДНИЕ ОБЗОРЫ
+                </h2>
+            </div>
+            <div class="all-news">
+                {% for over in bicyclenews %}
+                    <div class="overview">
+                        <img class="image-in-media" style="border-radius: 15px 15px 0 0 " src="{{ over.image.url }}"
+                             alt="">
+                        <div class="padding-media">
+                            <p>{{ over.date }}</p>
+                            <p style="color: #F57520">#{{ over.tag }}</p>
+                            <p>{{ over.description }}</p>
+                            <a href="">Подробнее</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="container">
+            <div class="new">
+                <h2>
+                    КОНТАКТЫ
+                </h2>
+            </div>
+        </div>
+        <div class="map"></div>
+    </div>
+
+
+    <div class="information">
+        <div class="first-display">
+
+            <div class="for-display">
+                <div class="smartphone">
+                </div>
+                <p>
+                    +7 (495) 055-75-86
+                    <br>+7 (965) 142-22-99
+                </p>
+            </div>
+            <div class="for-display">
+                <div class="navigation">
+                </div>
+                <p>
+                    г. Москва, ул.
+                    <br>Доватора, 7/8 с1
+                </p>
+            </div>
+        </div>
+
+        <div class="first-display">
+
+            <div class="for-display">
+                <div class="email"></div>
+                <p>
+                    order@world-bike.ru
+                </p>
+            </div>
+            <div class="for-display">
+                <div class="calendar"></div>
+                <p>
+                    Без выходных
+                    <br>10:00-20:00
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <section>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </section>
+
+
+
+{% endblock content %}

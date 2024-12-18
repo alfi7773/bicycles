@@ -1,0 +1,234 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+    <div class="style-form">
+
+        <div class="container center display-col">
+            <h2>
+                Update the Bicycles
+            </h2>
+
+            <form class="form-create" action="{% url 'update_bicycles' id=id %}" method="post"
+                  enctype="multipart/form-data" novalidate>
+                {% csrf_token %}
+                {{ form.as_div }}
+{#                <div class="width-form ">#}
+{#                    {{ form.mark }}#}
+{#                    {% for error in form.mark.errors %}#}
+{#                        <p class="red-text">{{ error }}</p>#}
+{#                    {% endfor %}#}
+{#                </div>#}
+{##}
+{#                <div class="width-file width-form">#}
+{#                    {{ form.image }}#}
+{#                    {% for error in form.image.errors %}#}
+{#                        <p class="red-text">{{ error }}</p>#}
+{#                    {% endfor %}#}
+{#                </div>#}
+{##}
+{#                <div class="width-form">#}
+{#                    {{ form.description }}#}
+{#                    {% for error in form.description.errors %}#}
+{#                        <p class="red-text">{{ error }}</p>#}
+{#                    {% endfor %}#}
+{#                </div>#}
+{##}
+{#                <div class="width-form ">#}
+{#                    {{ form.material }}#}
+{#                    {% for error in form.material.errors %}#}
+{#                        <p class="red-text">{{ error }}</p>#}
+{#                    {% endfor %}#}
+{#                </div>#}
+{##}
+{#                <div class="width-form">#}
+{#                    {{ form.price }}#}
+{#                    {% for error in form.price.errors %}#}
+{#                        <p class="red-text">{{ error }}</p>#}
+{#                    {% endfor %}#}
+{#                </div>#}
+{##}
+{#                <div class="container">#}
+{##}
+{#                    <div class="sizes-select">#}
+{#                        <div>#}
+{#                            <div>#}
+{#                                <label>{{ form.size.label }}</label>#}
+{#                            </div>#}
+{#                            {{ form.size }}#}
+{#                            {% for error in form.size.errors %}#}
+{#                                <p class="red-text">{{ error }}</p>#}
+{#                            {% endfor %}#}
+{#                        </div>#}
+{#                    </div>#}
+{##}
+{##}
+{#                    <div class="category-select">#}
+{#                        <div>#}
+{#                            <label>{{ form.category.label }}</label>#}
+{#                            {{ form.category }}#}
+{#                            {% for error in form.category.errors %}#}
+{#                                <p class="red-text">{{ error }}</p>#}
+{#                            {% endfor %}#}
+{#                        </div>#}
+{#                    </div>#}
+{##}
+{#                    <div class="category-select">#}
+{#                        <label>{{ form.category_product.label }}</label>#}
+{#                        {{ form.category_product }}#}
+{#                        {% for error in form.category_product.errors %}#}
+{#                            <p class="red-text">{{ error }}</p>#}
+{#                        {% endfor %}#}
+{#                    </div>#}
+{##}
+{#                </div>#}
+{##}
+{#                <div class="width-form ">#}
+{#                    {{ form.country }}#}
+{#                    {% for error in form.country.errors %}#}
+{#                        <p class="red-text">{{ error }}</p>#}
+{#                    {% endfor %}#}
+{#                </div>#}
+{##}
+{#                <div class="width-form ">#}
+{#                    {{ form.edition }}#}
+{#                    {% for error in form.edition.errors %}#}
+{#                        <p class="red-text">{{ error }}</p>#}
+{#                    {% endfor %}#}
+{#                </div>#}
+{##}
+{##}
+{#                <div class="width-form ">#}
+{#                    {{ form.have }}#}
+{#                    {% for error in form.have.errors %}#}
+{#                        <p class="red-text">{{ error }}</p>#}
+{#                    {% endfor %}#}
+{#                </div>#}
+
+                <div>
+                    <button type="submit">Save</button>
+                </div>
+
+
+            </form>
+
+        </div>
+    </div>
+
+{% endblock content %}
+
+
+
+
+
+{#{% block content %}#}
+{#    <div class="style-form">#}
+{##}
+{#        <div class="container center display-col">#}
+{#            <h2>#}
+{#                Update the Bicycles#}
+{#            </h2>#}
+{##}
+{#            <form class="form-create" action="{% url 'update_bicycles' id=id %}" method="post"#}
+{#                  enctype="multipart/form-data">#}
+{#                {% csrf_token %}#}
+{#                <div class="width-form ">#}
+{#                    <select multiple name="mark" required>#}
+{#                        {% for mark in marks %}#}
+{#                            <option value="{{ mark.id }}"#}
+{#                                    {% if mark.id == bicycles.mark.id %}selected{% endif %}>{{ mark.name }}</option>#}
+{#                        {% endfor %}#}
+{#                    </select>#}
+{#                </div>#}
+{##}
+{#                <div class="width-file width-form">#}
+{#                    <input type="file" name="image" accept="image/*">#}
+{#                </div>#}
+{##}
+{#                <div class="width-form">#}
+{#                    <input type="text" value="{{ bicycles.description }}" name="description" placeholder="Description"#}
+{#                           required>#}
+{#                </div>#}
+{##}
+{#                <div class="width-form ">#}
+{#                    <select multiple name="material" required>#}
+{#                        {% for mater in materials %}#}
+{#                            <option value="{{ mater.id }}"#}
+{#                                    {% if mater.id == bicycles.material.id %}selected{% endif %}>{{ mater.rams }}</option>#}
+{#                        {% endfor %}#}
+{#                    </select>#}
+{#                </div>#}
+{##}
+{#                <div class="width-form">#}
+{#                    <input type="text" value="{{ bicycles.price }}" name="price" placeholder="Price" required#}
+{#                           pattern="^\d+(\.\d{1,2})?$">#}
+{#                </div>#}
+{##}
+{##}
+{#                <div class="width-form ">#}
+{#                    <select multiple name="sizes" required>#}
+{#                        {% for siz in sizes %}#}
+{#                            <option value="{{ siz.id }}"#}
+{#                                    {% if siz in bicycles.size.all %}selected{% endif %}>{{ siz.name }}</option>#}
+{#                        {% endfor %}#}
+{#                    </select>#}
+{#                </div>#}
+{##}
+{#                <div class="width-form ">#}
+{#                    <select multiple name="category" required>#}
+{#                        {% for cat in categories %}#}
+{#                            <option value="{{ cat.id }}"#}
+{#                                    {% if cat in bicycles.category.all %}selected{% endif %}>{{ cat.title }}</option>#}
+{#                        {% endfor %}#}
+{#                    </select>#}
+{#                </div>#}
+{##}
+{#                <div class="width-form ">#}
+{#                    <select multiple name="category_product" required>#}
+{#                        {% for category in category_product %}#}
+{#                            <option value="{{ category.id }}"#}
+{#                                    {% if category in bicycles.category_product.all %}selected{% endif %}>{{ category.name }}</option>#}
+{#                        {% endfor %}#}
+{#                    </select>#}
+{#                </div>#}
+{##}
+{#                <div class="width-form ">#}
+{#                    <select multiple name="country" required>#}
+{#                        {% for country in countries %}#}
+{#                            <option value="{{ country.id }}"#}
+{#                                    {% if country.id == bicycles.country.id %}selected{% endif %}>{{ country.label }}</option>#}
+{#                        {% endfor %}#}
+{#                    </select>#}
+{#                </div>#}
+{##}
+{#                <div class="width-form ">#}
+{#                    <select multiple name="edition" required>#}
+{#                        {% for edition in editions %}#}
+{#                            <option value="{{ edition.id }}"#}
+{#                                    {% if edition.id == bicycles.edition.id %}selected{% endif %}>{{ edition.name }}</option>#}
+{#                        {% endfor %}#}
+{#                    </select>#}
+{#                </div>#}
+{##}
+{##}
+{#                <div class="width-form ">#}
+{#                    <select multiple name="have" required>#}
+{#                        {% for have in haves %}#}
+{#                            <option value="{{ have.id }}"#}
+{#                                    {% if have.id == bicycles.have.id %}selected{% endif %}>{{ have.have }}</option>#}
+{#                        {% endfor %}#}
+{#                    </select>#}
+{#                </div>#}
+{##}
+{#                <div>#}
+{#                    <button type="submit">Save</button>#}
+{#                </div>#}
+{##}
+{##}
+{#            </form>#}
+{##}
+{#        </div>#}
+{#    </div>#}
+{#    #}
+{#{% endblock content %}#}

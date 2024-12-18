@@ -1,0 +1,61 @@
+<nav class="navbar"">
+
+
+    <img src="../../static/static_dirs/image/logo.png" alt="">
+    <a class="brand" href="{% url 'main' %}">Navbar</a>
+
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="hamburger">☰</label>
+
+    <ul class="menu">
+        <li><a class="n" href="{% url 'main' %}">Home</a></li>
+        {% for category in categories|slice:"5:"%}
+            <li>
+                <a class="nav-link" href="{% url 'catalogue' %}?category={{ category.id }}">{{ category.title }}</a>
+            </li>
+        {% endfor %}
+
+        {% for category in categories|slice:"3:5" %}
+            <li>
+                <a class="nav-link" href="{% url 'catalogue' %}?category={{ category.id }}">{{ category.title }}</a>
+            </li>
+        {% endfor %}
+
+        {% for category in categories|slice:"2:3" %}
+            <li>
+                <a class="nav-link" href="{% url 'equipments' %}?category={{ category.id }}">{{ category.title }}</a>
+            </li>
+        {% endfor %}
+
+
+
+{#        {% for cat in cats %}#}
+{#            <a href="">{{ cat.title }}</a>#}
+{#        {% endfor %}#}
+
+            <li><a class="n" href="{% url 'workspace' %}">Workspace</a></li>
+    </ul>
+
+    <ul class="menu">
+    </ul>
+
+
+    <!-- Иконки -->
+    <div class="icons">
+        <div class="search"></div>
+        <div class="user"></div>
+        <div class="likes"></div>
+        <div class="basket"></div>
+        <div class="lines"></div>
+        {#    </div>#}
+
+        <div>
+            <form class="for-display-2" action="{% url 'catalogue' %}" method="get">
+                <input class="input" type="search" placeholder="Search" name="search"
+                       value="{{ request.GET.search }}" aria-label="Search">
+                <button class="btn" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+
+</nav>

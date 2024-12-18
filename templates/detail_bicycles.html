@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="text-center">nn</h1>
+    {#    <div class="card">#}
+    <div class="bicycle-display container">
+
+        <div class="display-images">
+            <div class="center"><img class="size-img" src="{{ bicycles.image.url }}" alt=""></div>
+            <div class="for-display">
+                <div class="images-bicycle"></div>
+                <div class="images-bicycle"></div>
+            </div>
+        </div>
+        <div class="description">
+            <p class="black big-font">{{ bicycles.mark }}</p>
+            <p class="green-text">{{ bicycles.have }}</p>
+            <p class="black big-font">{{ bicycles.price }}</p>
+            <p class="black">{{ bicycles.description }}</p>
+        
+            <div class="colors">
+                <h4 class="black">Размер:</h4>
+                <div class="sizes margin-0 ">
+                    {% for size in sizes %}
+                        {#                    <div>#}
+                        <div class="size">
+                            <a class="black" href="/">{{ size }}</a>
+                        </div>
+                        {#                    </div>#}
+                    {% endfor %}
+                </div>
+            </div>
+        
+            <p class="black">
+                {{ bicycles.edition }}
+            </p>
+
+            <div class="colors">
+                <h4 class="black">Цвет:</h4>
+                <div class="for-display">
+                    <div class="yellow"></div>
+                    <div class="green"></div>
+                    <div class="orange"></div>
+                    <div class="pink"></div>
+                    <div class="brown"></div>
+                    <div class="red"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="padding-characters ">
+        <h1 class="black">
+            Характеристика
+        </h1>
+        <div class="container">
+            {% for character in characters %}
+                <div class="display-div back-div-first">
+                    <h2>
+                        Цвет
+                    </h2>
+                    <h2>
+                        {{ character.color }}
+                    </h2>
+                </div>
+
+                <div class="display-div back-div-second">
+                    <h2>
+                        Год
+                    </h2>
+                    <h2>
+                        {{ character.year }}
+                    </h2>
+                </div>
+
+                <div class="display-div back-div-first">
+                    <h2>
+                        Материал рамы
+                    </h2>
+                    <h2>
+                        {{ character.material }}
+                    </h2>
+                </div>
+
+                <div class="display-div back-div-second">
+                    <h2>
+                        Размер
+                    </h2>
+                    <h2>
+                        {{ character.size }}
+                    </h2>
+                </div>
+
+                <div class="display-div back-div-first">
+                    <h2>
+                        Страна
+                    </h2>
+                    <h2>
+                        {{ character.country }}
+                    </h2>
+                </div>
+
+                <div class="display-div back-div-second">
+                    <h2>
+                        Производитель
+                    </h2>
+                    <h2>
+                        {{ character.edition }}
+                    </h2>
+                </div>
+
+            {% endfor %}
+        </div>
+    </div>
+
+
+{% endblock content %}

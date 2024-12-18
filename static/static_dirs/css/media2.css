@@ -1,0 +1,156 @@
+/* Базовые стили */
+body {
+    margin: 0;
+    font-family: Inter, sans-serif;
+    background-color: #101010; /* Основной фон */
+    color: white; /* Цвет текста по умолчанию */
+}
+
+.container {
+    width: 100%;
+    padding: 10px;
+}
+
+.header {
+    text-align: center; /* Центрируем заголовок */
+    padding: 20px;
+}
+
+.header h1 {
+    font-size: 26px; /* Размер заголовка */
+}
+
+.main-content {
+    padding: 10px;
+}
+
+.card {
+    background-color: #2E2E2E;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.card h2 {
+    font-size: 20px; /* Размер заголовка карты */
+}
+
+.card p {
+    font-size: 14px; /* Размер текста в карте */
+}
+
+.button {
+    background-color: #F57520;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    width: 100%; /* Кнопка занимает всю ширину */
+    margin-top: 10px;
+    font-size: 16px; /* Размер шрифта кнопки */
+}
+
+.footer {
+    padding: 20px;
+    text-align: center; /* Центрируем контент в футере */
+    background-color: #131313; /* Фон футера */
+}
+
+.footer h3 {
+    font-size: 18px; /* Размер шрифта заголовка в футере */
+}
+
+/* Стили для элементов контактов */
+.contacts {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
+}
+
+.contact-item {
+    margin: 5px 0;
+    font-size: 14px; /* Размер текста контактов */
+}
+
+/* Медиазапросы для адаптации к ширине экрана 360px и меньше */
+@media (max-width: 360px) {
+    .header h1 {
+        font-size: 22px; /* Уменьшение размера заголовка на малых экранах */
+    }
+
+    .main-content {
+        padding: 5px; /* Уменьшаем внутренние отступы */
+    }
+
+    .card {
+        padding: 10px; /* Уменьшаем padding в каждой карте */
+    }
+
+    .card h2 {
+        font-size: 18px; /* Уменьшаем размер заголовка карты */
+    }
+
+    .card p {
+        font-size: 12px; /* Уменьшаем текст в карте */
+    }
+
+    .button {
+        font-size: 14px; /* Уменьшаем размер шрифта кнопки */
+    }
+
+    .footer {
+        font-size: 12px; /* Уменьшаем размер шрифта в футере */
+    }
+
+    .contacts {
+        align-items: center; /* Центрируем элементы */
+    }
+
+    .contact-item {
+        font-size: 12px; /* Уменьшаем текст контактов */
+    }
+}
+
+/* Стили для секции преимуществ */
+.premium-section {
+    background-color: #1A1A1A; /* Цвет фона секции */
+    padding: 20px; /* Отступы секции */
+    border-radius: 10px; /* Округление углов */
+    margin-bottom: 20px; /* Отступ внизу */
+}
+
+.premium-section h2 {
+    font-size: 20px; /* Размер заголовка */
+}
+
+.premium-section p {
+    font-size: 14px; /* Размер текста */
+}
+
+/* Стили для секции обзоров */
+.reviews-section h2 {
+    font-size: 20px; /* Размер заголовка секции обзоров */
+    margin-bottom: 10px; /* Отступ снизу */
+}
+
+/* Стили для мобильных кнопок */
+.mobile-button {
+    background-color: #FF5733; /* Примерный цвет для мобильной кнопки */
+}
+
+/* Стили для секции подписки */
+.subscription-section {
+    background-color: #2E2E2E; /* Цвет для подписки */
+    padding: 20px;
+    border-radius: 10px; /* Округление углов */
+}
+
+.subscription-section input {
+    width: 100%; /* Полная ширина поля */
+    padding: 10px; /* Внутренние отступы поля */
+    border-radius: 5px; /* Округление полей */
+    margin-bottom: 10px; /* Отступ снизу */
+}

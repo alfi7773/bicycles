@@ -1,0 +1,852 @@
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: #333;
+    color: white;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    /*gap: 1rem;*/
+    margin: 0;
+    padding: 0;
+}
+
+
+.menu li {
+    padding: 1rem;
+    text-align: center;
+}
+
+.menu li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Гамбургер */
+.menu-toggle {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.menu-toggle:checked + .hamburger + .menu {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+
+    .big-text p {
+        width: 380px;
+    }
+
+    .for-display {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .for-display-1 div {
+        margin-right: 1rem;
+        /*flex-direction: column;*/
+
+
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        background-color: #444;
+        position: absolute;
+        top: 60px; /* Под навбаром */
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .menu {
+        display: none; /* По умолчанию скрыто */
+    }
+
+    .lines {
+        display: none;
+    }
+
+    .big-text {
+        padding-left: 25px;
+    }
+
+    .logos {
+        flex-direction: column;
+    }
+
+    .elements {
+        padding-left: 180px;
+    }
+
+    .cards-bicycle {
+        flex-direction: column;
+        margin: 0;
+        align-items: start;
+        gap: 20px;
+    }
+
+    .card {
+        margin: 0;
+        height: 385px;
+    }
+
+    .href {
+        text-align: start;
+        padding-left: 130px;
+    }
+
+    .first-button {
+        width: 525px;
+        height: 136px;
+        border-radius: 10px;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .end {
+        flex-direction: column;
+        gap: 50px;
+        padding-left: 160px;
+
+    }
+
+    .end h2 {
+        margin: 0;
+
+    }
+
+    .photo-video {
+        width: 768px;
+    }
+
+    .long-div {
+        width: 768px;
+        flex-direction: column;
+        height: 420px;
+    }
+
+
+    .information, .contacts {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .category {
+        flex: 1;
+        margin: 0 1rem;
+    }
+
+    .back-bicycles {
+        width: 768px;
+        height: 1330px;
+    }
+
+    .all {
+        flex-direction: column;
+        gap: 30px;
+        margin: 0;
+    }
+
+    .mountain {
+        margin: 0;
+        padding-left: 120px;
+    }
+
+
+    .types {
+        margin: 0;
+    }
+
+    .type-one {
+        margin: 0;
+    }
+
+    .type {
+        margin: 0;
+        flex-direction: column;
+        padding-left: 240px;
+    }
+
+    .start {
+        display: none;
+    }
+
+    .black-pick {
+        display: none;
+    }
+
+    .type-two {
+        flex-direction: column;
+    }
+
+    .all-equipments {
+        flex-direction: column;
+        height: 1000px;
+        margin: 0;
+        align-items: start;
+        padding-left: 181px;
+    }
+
+    .equipments {
+        margin: 0;
+    }
+
+    .map {
+        width: 768px;
+    }
+
+    .for-form {
+        width: 768px;
+        padding: 0;
+    }
+
+    .for-form h1 {
+        font-size: 40px;
+    }
+
+    .container {
+        /*display: block;*/
+        width: 768px;
+    }
+
+    .all-news {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .padding-media {
+        padding: 20px;
+    }
+
+    .overview {
+        padding: 0;
+    }
+
+    .for-display-1 {
+        flex-direction: column;
+        padding-left: 150px;
+    }
+
+
+    .card-button {
+        padding: 0;
+        padding-left: 60px;
+    }
+
+    .margin-button {
+        margin: 0;
+    }
+
+    .back-catalogue {
+        width: 768px;
+    }
+
+    .padding-catalogue {
+        padding: 85px 50px;
+    }
+}
+
+
+/*@media (min-width: 992px) {*/
+/*    .equipment, .news, .information {*/
+/*        display: flex;*/
+/*        justify-content: space-between;*/
+/*        flex-wrap: wrap;*/
+/*    }*/
+
+/*    .equipments, .overview {*/
+/*        flex: 1 1 calc(33% - 2rem); !* 3 колонки на больших экранах *!*/
+/*        margin: 1rem;*/
+/*    }*/
+/*}*/
+
+/*@media (max-width: 767px) {*/
+/*    .form input {*/
+/*        width: 100%;*/
+/*        margin: 0.5rem 0;*/
+/*    }*/
+
+/*    footer {*/
+/*        background: #f4f4f4;*/
+/*        padding: 1rem 0;*/
+/*        text-align: center;*/
+/*    }*/
+
+/*}*/
+
+
+/*.menu {*/
+/*    display: none;*/
+/*}*/
+
+
+@media (max-width: 360px) {
+
+
+    .new {
+        padding: 22px;
+
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        background-color: #444;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    .big-text p {
+        font-size: 15px;
+        padding-left: 30px;
+        width: 300px;
+    }
+
+    .big-text h1 {
+        font-size: 40px;
+        padding-left: 30px;
+    }
+
+    .for-button {
+        margin: 0;
+        padding-left: 25px;
+    }
+
+    .for-button button {
+        margin: 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+
+    .lines {
+        display: none;
+    }
+
+    .brand {
+        /*display: none;*/
+    }
+
+    .back-in-media {
+        background-image: url("../image/Снимок экрана 2024-11-30 105410.png");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 360px;
+        height: 875px;
+    }
+
+    .container {
+        width: 360px;
+    }
+
+    .big-text {
+        padding-right: 0;
+    }
+
+    .first {
+        width: 120px;
+    }
+
+    .first h4 {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .second {
+        width: 120px;
+    }
+
+    .second h4 {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .third {
+        width: 120px;
+    }
+
+    .third h4 {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .logos {
+        display: block;
+        text-align: center;
+    }
+
+    .cards-bicycle {
+        flex-direction: column;
+        gap: 10px;
+        padding: 0;
+    }
+
+    .card {
+        /*padding-top: 10px;*/
+        width: 310px;
+    }
+
+    .padding {
+        padding: 0;
+    }
+
+    .first-button {
+        width: 325px;
+        height: 82px;
+        border-radius: 10px;
+    }
+
+    .buttons {
+        display: block;
+        margin: 0;
+    }
+
+    .display {
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+        padding-left: 17px;
+        padding-right: 17px;
+        padding-bottom: 0;
+        padding-top: 10px;
+    }
+
+    .display-filter {
+        display: flex;
+        /*flex-direction: row;*/
+        margin: 0;
+        padding-left: 17px;
+        padding-right: 17px;
+        padding-bottom: 0;
+        padding-top: 10px;
+    }
+
+    .trade {
+        width: 330px;
+        height: 93px;
+
+        /*margin: 29px;*/
+        border-radius: 10px;
+    }
+
+    .details {
+        width: 170px;
+        height: 97px;
+        border-radius: 10px;
+    }
+
+    .accessories {
+        width: 170px;
+        height: 97px;
+        border-radius: 10px;
+    }
+
+    .equip {
+        width: 170px;
+        height: 97px;
+        border-radius: 10px;
+    }
+
+
+    .velo {
+        width: 170px;
+        height: 97px;
+        border-radius: 10px;
+    }
+
+    .background {
+        /*display: non;*/
+    }
+
+    .end {
+        display: block;
+        padding: 20px;
+    }
+
+    .end h2 {
+        font-size: 30px;
+        /*width: 308px;*/
+        padding-top: 20px;
+        /*text-align: center;*/
+    }
+
+    .end p {
+        font-size: 20px;
+        padding-top: 20px;
+
+    }
+
+    .photo-video {
+        width: 360px;
+        height: 230px;
+    }
+
+    .long-div {
+        width: 360px;
+        height: 370px;
+        display: block;
+    }
+
+    .text-vector {
+        gap: 10px;
+    }
+
+    .white {
+        text-align: left;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .back-bicycles {
+        background-position: right;
+        width: 360px;
+        height: 1315px;
+    }
+
+    .all-cards {
+        display: block;
+    }
+
+    .for-display {
+        flex-direction: column;
+    }
+
+    .models {
+        padding: 35px;
+    }
+
+    .models h1 {
+        font-size: 40px;
+        width: 316px;
+        text-align: left;
+    }
+
+    .all {
+        display: block;
+    }
+
+    .type {
+        flex-direction: column;
+        padding-left: 20px;
+    }
+
+    .mountain p {
+        width: 300px;
+        padding-left: 35px;
+    }
+
+    .button-in-mountine {
+        padding-left: 35px;
+        margin: 0;
+    }
+
+    .mountain {
+        padding-top: 30px;
+        width: 360px;
+        padding-left: 0;
+    }
+
+    .pic {
+        margin: 0;
+        width: 360px;
+        border-radius: 10px;
+        height: 175px;
+    }
+
+    .type-two {
+        flex-direction: column;
+    }
+
+    .all-equipments {
+        display: block;
+        /*width: 360px;*/
+        height: 1000px;
+        padding-left: 10px;
+    }
+
+    .equipments {
+        height: 380px;
+    }
+
+    .img-equipments {
+        width: 300px;
+    }
+
+    .all-news {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .overview {
+        width: 360px;
+        padding: 0;
+    }
+
+    .image-in-media {
+        width: 360px;
+    }
+
+    .padding-media {
+        padding-left: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .map {
+        width: 360px;
+    }
+
+    .information {
+        flex-direction: column;
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .first-display {
+        display: flex;
+        gap: 61px;
+    }
+
+    .for-form {
+        width: 360px;
+        height: 351px;
+        padding: 0;
+    }
+
+    .for-form h1 {
+        font-size: 28px;
+        width: 200px;
+        padding: 19px;
+    }
+
+    .from {
+        /*padding-left: 14px;*/
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .from input {
+        width: 315px;
+    }
+
+    .from button {
+        width: 320px;
+    }
+
+    .for-form label {
+        padding-left: 26px;
+    }
+
+    .logo {
+        margin: 0;
+    }
+
+    .logo-desc-media {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 27px;
+    }
+
+    .category {
+        display: none;
+    }
+
+    .category-last a {
+        display: none;
+    }
+
+    .contacts {
+        /*flex-direction: column;*/
+        display: block;
+    }
+
+    .display-in-media {
+        flex-direction: column;
+    }
+
+    .bicycle-display {
+        flex-direction: column;
+    }
+
+    .img-detail-media {
+        width: 300px;
+    }
+
+    .center img {
+        width: 300px;
+    }
+
+
+    .description {
+        padding: 26px;
+    }
+
+    /*    для каталога*/
+    .display-card {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .images-bicycle {
+        width: 100px;
+        height: 100px;
+    }
+
+    .display-images {
+        flex-direction: column;
+    }
+
+    .padding-characters h1 {
+        font-size: 32px;
+    }
+
+    .padding-characters {
+        padding: 0;
+        padding-top: 85px;
+        padding-bottom: 25px;
+    }
+
+    .for-display-2 input {
+        display: none;
+    }
+
+    .for-display-2 button {
+        display: none;
+    }
+
+    .sizes {
+        gap: 12px;
+    }
+
+    .size {
+        width: 30px;
+    }
+
+    .for-display-1 {
+        flex-direction: column;
+        padding-left: 0;
+    }
+
+    .width-form input {
+        width: 350px;
+        height: 78px;
+        padding-top: 10px;
+    }
+
+    .width-form select {
+        width: 350px;
+        height: 78px;
+        padding-top: 10px;
+    }
+
+    .back-catalogue {
+        width: 360px;
+    }
+
+    .back-catalogue h1 {
+        font-size: 40px;
+    }
+
+    .elements {
+        padding-left: 20px;
+    }
+
+    .height-equipments {
+        padding-bottom: 140px;
+    }
+
+    .display-col {
+        padding-left: 0;
+    }
+
+    .display-card {
+        padding-left: 30px;
+    }
+
+    .for-display-filter {
+        flex-wrap: wrap;
+    }
+
+    .display-div {
+        padding: 0;
+        gap: 0;
+    }
+
+}
+
+
+@media (max-width: 1768px) {
+    .with-hover {
+        display: flex;
+        padding: 45px;
+        text-align: center;
+        margin-top: 11px;
+    }
+}
+
+
+@media (max-width: 710px) {
+    .for-form {
+        width: 710px;
+        padding: 0;
+    }
+
+    .for-display-1 div {
+        margin: 0;
+    }
+
+    .container {
+        max-width: 710px;
+    }
+}
+
+
+@media (max-width: 750px) {
+    .for-form {
+        width: 750px;
+        padding: 0;
+    }
+
+    .for-display-1 div {
+        margin: 0;
+    }
+
+    .container {
+        max-width: 750px;
+    }
+}
+
+
+
