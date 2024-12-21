@@ -1,44 +1,115 @@
-<nav class="navbar"">
-
-
-    <img src="../../static/static_dirs/image/logo.png" alt="">
-    <a class="brand" href="{% url 'main' %}">Navbar</a>
-
-    <input type="checkbox" id="menu-toggle" class="menu-toggle">
-    <label for="menu-toggle" class="hamburger">☰</label>
-
-    <ul class="menu">
-        <li><a class="n" href="{% url 'main' %}">Home</a></li>
-        {% for category in categories|slice:"5:"%}
-            <li>
-                <a class="nav-link" href="{% url 'catalogue' %}?category={{ category.id }}">{{ category.title }}</a>
-            </li>
-        {% endfor %}
-
-        {% for category in categories|slice:"3:5" %}
-            <li>
-                <a class="nav-link" href="{% url 'catalogue' %}?category={{ category.id }}">{{ category.title }}</a>
-            </li>
-        {% endfor %}
-
-        {% for category in categories|slice:"2:3" %}
-            <li>
-                <a class="nav-link" href="{% url 'equipments' %}?category={{ category.id }}">{{ category.title }}</a>
-            </li>
-        {% endfor %}
-
-
-
+{#<nav class="navbar">#}
+{##}
+{##}
+{#    <img src="../../static/static_dirs/image/logo.png" alt="">#}
+{#    <a class="brand" href="{% url 'main' %}">Navbar</a>#}
+{##}
+{#    <input type="checkbox" id="menu-toggle" class="menu-toggle">#}
+{#    <label for="menu-toggle" class="hamburger">☰</label>#}
+{##}
+{#    <ul class="menu">#}
+{#        <li><a class="n" href="{% url 'main' %}">Home</a></li>#}
+{#        {% for category in categories|slice:"5:"%}#}
+{#            <li>#}
+{#                <a class="nav-link" href="{% url 'catalogue' %}?category={{ category.id }}">{{ category.title }}</a>#}
+{#            </li>#}
+{#        {% endfor %}#}
+{##}
+{#        {% for category in categories|slice:"3:5" %}#}
+{#            <li>#}
+{#                <a class="nav-link" href="{% url 'catalogue' %}?category={{ category.id }}">{{ category.title }}</a>#}
+{#            </li>#}
+{#        {% endfor %}#}
+{##}
+{#        {% for category in categories|slice:"2:3" %}#}
+{#            <li>#}
+{#                <a class="nav-link" href="{% url 'equipments' %}?category={{ category.id }}">{{ category.title }}</a>#}
+{#            </li>#}
+{#        {% endfor %}#}
+{##}
+{##}
+{##}
 {#        {% for cat in cats %}#}
 {#            <a href="">{{ cat.title }}</a>#}
 {#        {% endfor %}#}
+{##}
+{#            <li><a class="n" href="{% url 'workspace' %}">Workspace</a></li>#}
+{#    </ul>#}
+{##}
+{#    <ul class="menu">#}
+{#    </ul>#}
+{##}
+{##}
+{#    <!-- Иконки -->#}
+{#    <div class="icons">#}
+{#        <div class="search"></div>#}
+{#        <div class="user"></div>#}
+{#        <div class="likes"></div>#}
+{#        <div class="basket"></div>#}
+{#        <div class="lines"></div>#}
+{#    </div>#}
+{##}
+{#        <div>#}
+{#            <form class="for-display-2" action="{% url 'catalogue' %}" method="get">#}
+{#                <input class="input" type="search" placeholder="Search" name="search"#}
+{#                       value="{{ request.GET.search }}" aria-label="Search">#}
+{#                <button class="btn" type="submit">Search</button>#}
+{#            </form>#}
+{#        </div>#}
+{#    </div>#}
+{##}
+{#</nav>#}
 
-            <li><a class="n" href="{% url 'workspace' %}">Workspace</a></li>
-    </ul>
+{#chat#}
+<nav class="navbar">
+    <a class="brand" href="{% url 'main' %}">Navbar</a>
 
+    <!-- Бургер-меню -->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="hamburger">☰</label>
+
+    <!-- Главное меню -->
     <ul class="menu">
-    </ul>
+        <li><a class="n" href="{% url 'main' %}">Home</a></li>
+        {% for category in categories|slice:"5:" %}
+            <li>
+                <a class="nav-link" href="{% url 'catalogue' %}?category={{ category.id }}">{{ category.title }}</a>
+            </li>
+        {% endfor %}
+        {% for category in categories|slice:"3:5" %}
+            <li>
+                <a href="{% url 'catalogue' %}?category={{ category.id }}">{{ category.title }}</a>
+            </li>
+        {% endfor %}
+        {% for category in categories|slice:"2:3" %}
+            <li>
+                <a href="{% url 'equipments' %}?category={{ category.id }}">{{ category.title }}</a>
+            </li>
+        {% endfor %}
+        {% if request.user.is_authenticated %}
+            <li class="dropdown">
+                <a class="nav-link dropdown-btn" href="#">{{ request.user.username }}</a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a class="n" href="{% url 'workspace' %}">Workspace</a>
 
+                    </li>
+                    <li>
+                        <a href="#">Profile</a>
+                    </li>
+                </ul>
+            </li>
+        {% else %}
+            <li>
+                <a href="#">Login</a>
+            </li>
+            <li>
+                <a href="#">Sign Up</a>
+            </li>
+
+        {% endif %}
+
+    </ul>
 
     <!-- Иконки -->
     <div class="icons">
@@ -47,15 +118,12 @@
         <div class="likes"></div>
         <div class="basket"></div>
         <div class="lines"></div>
-        {#    </div>#}
-
         <div>
-            <form class="for-display-2" action="{% url 'catalogue' %}" method="get">
+            <form class="search-form" action="{% url 'catalogue' %}" method="get">
                 <input class="input" type="search" placeholder="Search" name="search"
                        value="{{ request.GET.search }}" aria-label="Search">
                 <button class="btn" type="submit">Search</button>
             </form>
         </div>
     </div>
-
 </nav>
